@@ -70,7 +70,7 @@ describe("Button ", () => {
     expect(el.classList.contains("button-text")).toBe(true);
   });
 
-  it("should render as a button", () => {
+  it("Spy should be called when clicked", () => {
     const testFn = jest.fn();
     const { getByText } = render(
       <Button type="button" onClick={testFn} as="primary">
@@ -82,5 +82,17 @@ describe("Button ", () => {
     expect(testFn).toHaveBeenCalledTimes(1);
     fireEvent.click(btn);
     expect(testFn).toHaveBeenCalledTimes(2);
+  });
+
+  it("should be disabled", () => {
+    const testFn = jest.fn();
+    const { getByRole } = render(
+      <Button type="button" onClick={testFn} as="primary" disabled>
+        hello world
+      </Button>
+    );
+    const el = getByRole("button");
+    //null would mean the attribute doesnt exist empty string means it exists
+    expect(el.getAttribute("disabled")).toBe("");
   });
 });

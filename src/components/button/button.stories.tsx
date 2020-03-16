@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "./button";
-import { text, select } from "@storybook/addon-knobs";
+import { text, select, boolean } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
 export default {
@@ -13,6 +13,7 @@ export const Usage = () => (
     onClick={action("Button Clicked")}
     as={select("Show As", ["primary", "secondary", "ghost", "text"], "primary")}
     type={select("Type", ["button", "submit"], "button")}
+    disabled={boolean("Disabled", false)}
   >
     {text("Text", "Primary Button")}
   </Button>
