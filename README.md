@@ -20,6 +20,7 @@ A simple `Button` component has been included so that you can see the storybook 
 ## ToDo's
 
 - [ ] Verify setup
+- [ ] Expand Readme to describe all packages included
 - [ ] Your PR's and issues
 
 ## Issues
